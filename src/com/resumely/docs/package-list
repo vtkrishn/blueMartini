@@ -1,0 +1,8 @@
+com.resumely.client
+com.resumely.exception
+com.resumely.logger
+com.resumely.modules
+com.resumely.object
+com.resumely.plugins
+com.resumely.test
+com.resumely.util

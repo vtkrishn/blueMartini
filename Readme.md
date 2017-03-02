@@ -20,6 +20,7 @@ java -classpath <jar references> com.vtkrishn.resumeMaker.client.ResumeClient <f
 related libraries are there in this location
 ```
 src\com\vtkrishn\resumeMaker\lib
+junit-4.12.jar
 poi-3.16-beta2.jar
 poi-excelant-3.16-beta2.jar
 poi-ooxml-3.16-beta2.jar
