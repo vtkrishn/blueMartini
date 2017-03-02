@@ -1,5 +1,6 @@
 package com.vtkrishn.resumeMaker.logger;
 
+
 import com.vtkrishn.resumeMaker.util.ResumeConstants;
 
 import java.util.logging.Level;

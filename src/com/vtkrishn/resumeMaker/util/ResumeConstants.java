@@ -1,20 +1,19 @@
 package com.vtkrishn.resumeMaker.util;
 
+
 import com.vtkrishn.resumeMaker.logger.ResumeLogger;
 
 import java.io.File;
 import java.io.FileInputStream;
-
 import java.io.IOException;
 
 import java.util.Properties;
 import java.util.logging.FileHandler;
 
+
 public final class ResumeConstants {
-    
     private static Properties properties;
     private static FileHandler handler;
-    
     //Static block to instanitate properties and log handler
     static {
             properties = new Properties();
@@ -39,4 +38,7 @@ public final class ResumeConstants {
     public static FileHandler getHandler(){
         return handler;
     }
+    
+    
+    public static final String EXTENSION_SEPARATOR = ".";
 }

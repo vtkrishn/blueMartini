@@ -1,8 +1,9 @@
 package com.vtkrishn.resumeMaker.object;
 
-import com.vtkrishn.resumeMaker.exception.ResumeException;
 
+import com.vtkrishn.resumeMaker.exception.ResumeException;
 import com.vtkrishn.resumeMaker.logger.ResumeLogger;
+import com.vtkrishn.resumeMaker.util.ResumeConstants;
 
 import java.io.File;
 
@@ -10,7 +11,7 @@ public class Resume {
     String name;
     String[] content;
     long size;
-    FileType.TYPE type;
+    FileType type;
     File file;
     
     public Resume(String resume) {
@@ -21,7 +22,7 @@ public class Resume {
                 ResumeLogger.getLogger().entering("Resume", e.getMessage());
             }
     
-        if(resume.contains(".")){
+        if(resume.contains(ResumeConstants.EXTENSION_SEPARATOR)){
             identifyFileType(resume);
         }
         else{
@@ -42,19 +43,19 @@ public class Resume {
      * indetify the file type
      */
     private void identifyFileType(String resume) {
-        String[] fileAndExtension = resume.split("\\.");
+        String[] fileAndExtension = resume.split("\\"+ResumeConstants.EXTENSION_SEPARATOR);
         switch(fileAndExtension[1]){
             case "doc":
-                this.type = FileType.TYPE.DOC;
+                this.type = FileType.DOC;
                 break;
             case "docx":
-                this.type = FileType.TYPE.DOC;
+                this.type = FileType.DOCX;
                 break;
             case "txt":
-                this.type = FileType.TYPE.DOC;
+                this.type = FileType.TXT;
                 break;
             case "pdf":
-                this.type = FileType.TYPE.DOC;
+                this.type = FileType.PDF;
                 break;
             default:
                 try {
@@ -74,14 +75,16 @@ public class Resume {
         return file;
     }
     
+    public FileType getType(){
+        return this.type;
+    }
+    
     public void setContent(String[] fileContent){
         this.content = fileContent;
     }
         
-    static class FileType{
-        enum TYPE{
+        public enum FileType{
           DOC,DOCX,PDF,TXT;
             private static final long serialVersionUID = 1L;
         };
-    }
 }

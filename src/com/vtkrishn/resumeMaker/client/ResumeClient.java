@@ -1,11 +1,10 @@
 package com.vtkrishn.resumeMaker.client;
 
+
 import com.vtkrishn.resumeMaker.exception.ResumeException;
 import com.vtkrishn.resumeMaker.logger.ResumeLogger;
 import com.vtkrishn.resumeMaker.object.Resume;
 import com.vtkrishn.resumeMaker.util.ResumeUtil;
-
-import java.io.File;
 
 /**
  * Main Class
@@ -27,8 +26,8 @@ public class ResumeClient {
         }
         //create the file with the command argument
         Resume resume = new Resume(args[0]);
-        ResumeUtil.readDocFile(resume);
-        
+        ResumeUtil.readContentFromResume(resume);
+          
     } 
     
     
