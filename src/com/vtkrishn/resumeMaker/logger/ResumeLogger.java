@@ -18,6 +18,10 @@ public final class ResumeLogger {
             logger.setLevel(Level.ALL);
     }
     
+    /**
+     * get the logger instance
+     * @return
+     */
     public static Logger getLogger(){
         return logger;
     }

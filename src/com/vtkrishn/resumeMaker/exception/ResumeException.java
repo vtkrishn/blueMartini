@@ -13,6 +13,10 @@ public class ResumeException extends Exception{
         super();
     }
     
+    /**
+     * Constructor with message
+     * @param message
+     */
     public ResumeException(final String message) {
         ResumeLogger.getLogger().fine(message);
     }

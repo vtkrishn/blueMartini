@@ -2,29 +2,33 @@ package com.vtkrishn.resumeMaker.client;
 
 import com.vtkrishn.resumeMaker.exception.ResumeException;
 import com.vtkrishn.resumeMaker.logger.ResumeLogger;
+import com.vtkrishn.resumeMaker.object.Resume;
 import com.vtkrishn.resumeMaker.util.ResumeUtil;
 
 import java.io.File;
 
+/**
+ * Main Class
+ */
 public class ResumeClient {
+    
     public ResumeClient() {
         super();
-        //client to load the resume client
     }
     
     public static void main(String[] args){
-        //Read a word document from command line by providing the location
-        //disect thfose file with words
-        //D:\gitRepos_blueMartini\src\com\vtkrishn\resumeMaker\test.doc
+        //arg should not be null
         if(args == null){
             try {
                 throw new ResumeException("No File provided for processing");
             } catch (ResumeException e) {
-                ResumeLogger.getLogger().severe(e.getMessage());
+                ResumeLogger.getLogger().entering("ResumeClient", e.getMessage());
             }
         }
-        File file = ResumeUtil.setFile("D:\\gitRepos_blueMartini\\src\\com\\vtkrishn\\resumeMaker\\test.doc");
-        ResumeUtil.readDocFile(file);
+        //create the file with the command argument
+        Resume resume = new Resume(args[0]);
+        ResumeUtil.readDocFile(resume);
+        
     } 
     
     

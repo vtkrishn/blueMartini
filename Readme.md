@@ -14,7 +14,7 @@ Add the folder to the your PATH
 
 Running the file
 ```
-java -classpath <jar references> com.vtkrishn.resumeMaker.client.ResumeClient
+java -classpath <jar references> com.vtkrishn.resumeMaker.client.ResumeClient <fileName>
 ```
 
 related libraries are there in this location
