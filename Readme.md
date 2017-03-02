@@ -31,5 +31,5 @@ xmlbeans-2.6.0.jar
 
 jar for the class should be distributed to
 ```
-src\com\vtkrishn\resumeMaker\dist\resumeMaker-beta.jar
+src\com\vtkrishn\resumeMaker\dist\resumely-beta.jar
 ```
