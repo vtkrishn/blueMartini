@@ -7,7 +7,7 @@ public class ResumeClient {
     }
     public static void main(String[] args){
         //Read a word document from command line by providing the location
-        //disect those file with words
-        f
+        //disect thfose file with words
+        
     }
 }
