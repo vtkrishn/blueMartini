@@ -7,7 +7,13 @@ git init
 git add .
 git commit -m '<comment>'
 git remote add origin https://github.com/vtkrishn/blueMartini.git
-git push -u origin master
+git push -u origin <branch>
+```
+
+To create a branch
+```
+git checkout -b <branch>
+git push -u origin <branch>
 ```
 
 Add the folder to the your PATH
