@@ -14,7 +14,7 @@ public class Resume {
     Object[] content;
     long size;
     FileType type;
-    File file;
+    File fileLocation;
     
     public Resume(String resume) {
         if(resume == null || resume.equals(""))
@@ -35,9 +35,9 @@ public class Resume {
             }
         }
             //valid file
-            this.file = new File(resume);
-            this.name = file.getName();
-            this.size = file.length();
+            this.fileLocation = new File(resume);
+            this.name = fileLocation.getName();
+            this.size = fileLocation.length();
     }
     
     /*
@@ -73,15 +73,23 @@ public class Resume {
     }
     
     public File getFile(){
-        return file;
+        return fileLocation;
     }
     
     public FileType getType(){
         return this.type;
     }
     
+    public long getFileSize(){
+        return this.size;
+    }
+    
     public void setContent(Object[] fileContent){
         this.content = fileContent;
+    }
+    
+    public Object[] getContent(){
+        return this.content;
     }
         
         public enum FileType{
