@@ -32,16 +32,11 @@ public class ResumeUtil {
                             else if(file.getType() == Resume.FileType.DOCX){
                                 XWPFDocument document = new XWPFDocument(fis);
                                 List<XWPFParagraph> paragraphs = document.getParagraphs();
-                                file.setContent((String[])paragraphs.toArray());
-                                fis.close();
-                                for (XWPFParagraph para : paragraphs) {
-                                        System.out.println(para.getText());
-                                }
-                                fis.close();                                       
+                                file.setContent(paragraphs.toArray());
                             }
                                 
                         } catch (Exception e) {
-            ResumeLogger.getLogger().entering("ResumeUtil", e.getMessage());
+                            ResumeLogger.getLogger().entering("ResumeUtil", e.getMessage());
                         }
             
                 }

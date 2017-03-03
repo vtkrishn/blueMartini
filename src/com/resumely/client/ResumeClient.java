@@ -26,8 +26,7 @@ public class ResumeClient {
         }
         //create the file with the command argument
         Resume resume = new Resume(args[0]);
-        ResumeUtil.readContentFromResume(resume);
-          
+        ResumeUtil.readContentFromResume(resume);  
     } 
     
     

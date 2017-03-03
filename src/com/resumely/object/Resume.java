@@ -7,9 +7,11 @@ import com.resumely.util.ResumeConstants;
 
 import java.io.File;
 
+import org.apache.poi.poifs.filesystem.DocumentInputStream;
+
 public class Resume {
     String name;
-    String[] content;
+    Object[] content;
     long size;
     FileType type;
     File file;
@@ -32,7 +34,6 @@ public class Resume {
                 ResumeLogger.getLogger().entering("Resume", e.getMessage());
             }
         }
-            
             //valid file
             this.file = new File(resume);
             this.name = file.getName();
@@ -79,7 +80,7 @@ public class Resume {
         return this.type;
     }
     
-    public void setContent(String[] fileContent){
+    public void setContent(Object[] fileContent){
         this.content = fileContent;
     }
         
