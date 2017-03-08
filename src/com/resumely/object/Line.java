@@ -8,14 +8,13 @@ public class Line {
     String lineContent;
     Word[] words;
     int wordCount;
-    Map<Token,Integer> characters;
-    int totalCharacterCount;
     
     public Line(String lineContent) {
         this.lineContent = lineContent;
-        words = Parser.tokenizeWords(lineContent);
-        this.wordCount = words.length;
-        characters = Parser.tokenizeCharacters(words,this);
+        
+        //words = Parser.tokenizeWords(this);
+        //update total words 
+        //update total characters in the Resume
     }
     
     public String getLineContent() {
@@ -23,6 +22,22 @@ public class Line {
     }
 
     public void setTotalCharacterCount(int totalCharacterCount) {
-        this.totalCharacterCount = totalCharacterCount;
+        //this.totalCharacterCount = totalCharacterCount;
     }
+
+    public static Word[] getWords(String lineContent) {
+        return Parser.getWordList(lineContent);
+    }
+
+    public int getWordCount() {
+        return wordCount;
+    }
+
+//    public static Map<Token, Integer> getCharacters() {
+//        return characters;
+//    }
+//
+//    public int getTotalCharacterCount() {
+//       // return totalCharacterCount;
+//    }
 }

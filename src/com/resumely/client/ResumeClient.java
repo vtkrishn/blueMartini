@@ -6,6 +6,8 @@ import com.resumely.Parser;
 import com.resumely.WordList;
 import com.resumely.exception.ResumeException;
 import com.resumely.logger.ResumeLogger;
+import com.resumely.modules.AbstractFile;
+import com.resumely.object.Line;
 import com.resumely.object.Resume;
 import com.resumely.util.ResumeUtil;
 
@@ -28,15 +30,18 @@ public class ResumeClient {
             }
         }
         //create the file with the command argument
-        Resume resume = new Resume(args[0]);
+        AbstractFile resume = new Resume(args[0]);
         //read the content row by row from the document
-        ResumeUtil.readContentFromResume(resume);  
+        ResumeUtil.getInstance().readContent(resume);  
         //extract word by word
         LineList list = new LineList();
         Parser.lineTokenize(resume.getContent(),list);
         //identify first 10 lines and work on those words
         for(int i=0;i<=10;i++){
-            System.out.println(list.getLines().get(i).getLineContent());
+            //System.out.println(list.getLines().get(i).getWordCount());
+            Line line = list.getLines().get(i);
+            String lineContent = line.getLineContent();
+            System.out.println(line.getWords(lineContent)[0].getContent());
         }
     } 
     

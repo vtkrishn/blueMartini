@@ -35,7 +35,7 @@ public class Parser {
             list.add(line);    
         }
     }
-    public static Word[] tokenizeWords(String lineContent){
+    public static Word[] getWordList(String lineContent){
         String[] words = lineContent.split(" ");
         Word[] word = new Word[words.length];
         int i=0;
@@ -45,14 +45,16 @@ public class Parser {
         }
         return word;
     }
+    public static Map<Token,Integer> tokenizeWords(Line line){
+        return null;
+    }
     
-    public static Map<Token,Integer> tokenizeCharacters(Word[] words,Line line){
+    public static Map<Token,Integer> tokenizeCharacters(Word word){
         Map<Token,Integer> tokens = null;
         
         int totalCharacterCount=0;
         int spaceCount = 0;
         Token token = null;
-        for(Word word : words){
             int i=0;
             while(i<word.length()){
                 char ch = word.getContent().charAt(i++);
@@ -70,10 +72,9 @@ public class Parser {
                 totalCharacterCount++;
             }
             spaceCount++;
-        }
         token = new Token(' ');
         tokens.put(token,spaceCount);
-        line.setTotalCharacterCount(totalCharacterCount);
+        //line.setTotalCharacterCount(totalCharacterCount);
         return tokens;
     }
 }

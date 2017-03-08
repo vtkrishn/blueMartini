@@ -1,19 +1,29 @@
 package com.resumely.object;
 
-public class Token {
-    char character;
+import java.util.Iterator;
+
+public class Token<T> implements Iterable,Comparable{
+    T token;
                
-    public Token(char ch) {
-        this.character = ch;
+    public Token(T ch) {
+        this.token = ch;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return this.character == ((Token)obj).character;
+        return this.token == ((Token)obj).token;
     }
 
     @Override
     public int hashCode() {
-        return this.character % 31;
+        return this.token.hashCode() % 31;
+    }
+
+    public Iterator iterator() {
+        return null;
+    }
+
+    public int compareTo(Object o) {
+        return 0;
     }
 }
