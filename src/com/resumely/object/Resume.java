@@ -22,7 +22,7 @@ public class Resume extends AbstractFile implements IResume{
         return null;
     }
 
-    public Name getCandidateName() {
+    public String getCandidateName() {
         return null;
     }
 }
