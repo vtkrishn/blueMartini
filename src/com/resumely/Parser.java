@@ -48,7 +48,6 @@ public class Parser {
     public static Map<Token,Integer> tokenizeWords(Line line){
         return null;
     }
-    
     public static Map<Token,Integer> tokenizeCharacters(Word word){
         Map<Token,Integer> tokens = null;
         

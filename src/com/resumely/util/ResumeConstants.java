@@ -14,6 +14,10 @@ import java.util.logging.FileHandler;
 public final class ResumeConstants {
     private static Properties properties;
     private static FileHandler handler;
+    public static final String EXTENSION_SEPARATOR = ".";
+    public static final String LOG_FILE_LOCATION = "LOG_FILE_LOCATION";
+    public static final String APPEND_LOG = "APPEND_LOG";
+    
     //Static block to instanitate properties and log handler
     static {
             properties = new Properties();
@@ -25,7 +29,7 @@ public final class ResumeConstants {
             }
 
         try {
-            handler = new FileHandler(properties.getProperty("LOG_FILE_LOCATION"),Boolean.valueOf(properties.getProperty("APPEND_LOG")));
+            handler = new FileHandler(properties.getProperty(LOG_FILE_LOCATION),Boolean.valueOf(properties.getProperty(APPEND_LOG)));
         } catch (IOException e) {
             ResumeLogger.getLogger().entering("ResumeConstants", e.getMessage());
         }
@@ -39,6 +43,4 @@ public final class ResumeConstants {
         return handler;
     }
     
-    
-    public static final String EXTENSION_SEPARATOR = ".";
 }
