@@ -11,7 +11,8 @@ public class Token<T> implements Iterable,Comparable{
 
     @Override
     public boolean equals(Object obj) {
-        return this.token == ((Token)obj).token;
+        if(obj instanceof Token)
+            return this.token == ((Token)obj).token;
     }
 
     @Override
