@@ -12,6 +12,7 @@ import com.resumely.object.Resume;
 import com.resumely.object.Word;
 import com.resumely.util.ResumeUtil;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,21 +42,12 @@ public class ResumeClient {
         LineList list = new LineList();
         Parser.lineTokenize(resume.getContent(),list);
         //identify first 10 lines and work on those words
-        Map<String,Integer> map = new HashMap<String, Integer>();
-        for(int i=0;i<=10;i++){
+        for(int i=0;i<list.getLines().size();i++){
             //System.out.println(list.getLines().get(i).getWordCount());
             Line line = list.getLines().get(i);
-            String lineContent = line.getLineContent();
-            Word[] words = line.getWords(lineContent);
-            for(Word w : words){
-                String[] str = w.getContent().split(" ");
-                for(String s : str)
-                    map.put(s, map.getOrDefault(s, 0)+1);
-            }
         }
-        System.out.println(map.size());
+        for(Map.Entry<Character,Integer> entry : list.getWordMap().entrySet()){
+                    System.out.println(entry.getKey() + ":" + entry.getValue());
+                }
     } 
-    
-    
-    
 }

@@ -34,6 +34,7 @@ public class Parser {
             Line line = new Line((String)resumeContent[i]);
             list.add(line);    
         }
+        list.analyze();
     }
     public static Word[] getWordList(String lineContent){
         String[] words = lineContent.split(" ");
