@@ -13,6 +13,7 @@ public class Token<T> implements Iterable,Comparable{
     public boolean equals(Object obj) {
         if(obj instanceof Token)
             return this.token == ((Token)obj).token;
+        return false;
     }
 
     @Override

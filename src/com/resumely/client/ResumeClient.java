@@ -9,7 +9,11 @@ import com.resumely.logger.ResumeLogger;
 import com.resumely.modules.AbstractFile;
 import com.resumely.object.Line;
 import com.resumely.object.Resume;
+import com.resumely.object.Word;
 import com.resumely.util.ResumeUtil;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Main Class
@@ -37,12 +41,19 @@ public class ResumeClient {
         LineList list = new LineList();
         Parser.lineTokenize(resume.getContent(),list);
         //identify first 10 lines and work on those words
+        Map<String,Integer> map = new HashMap<String, Integer>();
         for(int i=0;i<=10;i++){
             //System.out.println(list.getLines().get(i).getWordCount());
             Line line = list.getLines().get(i);
             String lineContent = line.getLineContent();
-            System.out.println(line.getWords(lineContent)[0].getContent());
+            Word[] words = line.getWords(lineContent);
+            for(Word w : words){
+                String[] str = w.getContent().split(" ");
+                for(String s : str)
+                    map.put(s, map.getOrDefault(s, 0)+1);
+            }
         }
+        System.out.println(map.size());
     } 
     
     
