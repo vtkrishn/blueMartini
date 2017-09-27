@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/vtkrishn/blueMartini.svg?branch=master)](https://travis-ci.org/vtkrishn/blueMartini)
 To start contributing use these steps
 
 Create a folder and do
