@@ -6,13 +6,12 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 
-@Path("/resumely")
+@Path("/resume")
+@Produces(MediaType.APPLICATION_JSON)
 public class ResumeService {
     
     @GET
-    @Path("/resume")
-    @Produces(MediaType.APPLICATION_XML)
-    public String getResume(){
+    public String get(){
         return "Resume";
     }
 }

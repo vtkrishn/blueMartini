@@ -46,8 +46,10 @@ public class ResumeClient {
             //System.out.println(list.getLines().get(i).getWordCount());
             Line line = list.getLines().get(i);
         }
-        for(Map.Entry<Character,Integer> entry : list.getWordMap().entrySet()){
+        for(Map.Entry<String,Integer> entry : list.getWordMap().entrySet()){
                     System.out.println(entry.getKey() + ":" + entry.getValue());
-                }
+        }
+    
+        
     } 
 }
