@@ -42,14 +42,13 @@ public class ResumeClient {
         LineList list = new LineList();
         Parser.lineTokenize(resume.getContent(),list);
         //identify first 10 lines and work on those words
-        for(int i=0;i<list.getLines().size();i++){
-            //System.out.println(list.getLines().get(i).getWordCount());
-            Line line = list.getLines().get(i);
-        }
+//        for(int i=0;i<list.getLines().size();i++){
+//            Line line = list.getLines().get(i);
+//            System.out.println(line.getLineContent());
+//        }
         for(Map.Entry<String,Integer> entry : list.getWordMap().entrySet()){
                     System.out.println(entry.getKey() + ":" + entry.getValue());
         }
-    
         
     } 
 }
